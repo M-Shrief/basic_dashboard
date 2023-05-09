@@ -1,29 +1,11 @@
-# dashboard
+### Interview Task: Dasboard for (doctors, patients) with CRUD operations
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- faked api with hardcoded "fakeApi" in pinia stores.
+- used _pinia-plugin-persistedstate_ to persist data in session, as long the app
+  didn't reload.
+- added basic login and guards with vue-router.
+- used SCSS.
+- added form for Crud Operation in the end of Doctors/Patients pages so that you
+  can see the update instantly (it's just a demo).
+- Deployed with github actions
+  [here](https://m-shrief.github.io/basic_dashboard/).
