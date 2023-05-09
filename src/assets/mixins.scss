@@ -1,0 +1,91 @@
+$breakpoint-sm: 640px;
+$breakpoint-md: 760px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+$dark: #181818;
+$gray: #282828;
+$white: #eee;
+$silver: #ebebeba3;
+$blue: #2c3e50;
+$green: #00bd7e;
+
+@mixin fade-transition {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}
+
+@mixin crud-links {
+  .crud-links {
+    width: 0.5rem;
+
+    img {
+      display: block;
+      margin: 0.4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+  @if length($arg) == 2 {
+    @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+      @content;
+    }
+  }
+}
+
+@mixin checkboxes {
+  .checkboxes {
+    list-style: none;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .checkbox {
+    margin: 0.3rem;
+    overflow: visible;
+    display: inline-flex;
+    label {
+      font-size: 0.8rem;
+      padding: 0.2rem;
+      cursor: pointer;
+      overflow: visible;
+      transition: all 0.5s;
+      @include mQ($breakpoint-md) {
+        font-size: 0.7rem;
+        padding: 0.15rem;
+      }
+      @include mQ($breakpoint-sm) {
+        font-size: 0.6rem;
+        padding: 0.1rem;
+      }
+    }
+    input[type='checkbox']:checked + label {
+      background-color: $green;
+      color: rgba($color: $white, $alpha: 0.8);
+      transition: all 0.5s;
+      border-radius: 1.5rem;
+    }
+    input[type='checkbox'] {
+      display: absolute;
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
