@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/basic_dashboard/',
+  base: '/basic_dashboard/',
   plugins: [vue()],
   resolve: {
     alias: {
